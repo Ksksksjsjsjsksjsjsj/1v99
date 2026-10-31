@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Candidatura | 1V99 América RolePlay</title>
+<meta name="description" content="Formulário oficial de candidatura da 1V99, no América RolePlay.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#080808">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=Sacramento&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="1V99, América RolePlay, página inicial"><img class="brand__logo" src="assets/img/logo-1v99.webp" alt="" width="760" height="606" decoding="async"><span class="brand__sig" aria-hidden="true">América RolePlay</span></a>
+    <a class="btn btn-ghost btn-sm" href="admin/index.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>ÁREA ADMINISTRATIVA</a>
+  </div>
+</header>
+<main id="conteudo" class="form-shell">
+  <div id="flow">
+    <header class="page-title">
+      <p class="badge-official">PROCESSO SELETIVO OFICIAL</p>
+      <h1 class="title"><span class="t1">RECRUTAMENTO</span> <span class="t2">1V99</span></h1>
+      <p class="page-lead">Uma nova oportunidade começa com sua candidatura. Demonstre seu comprometimento, conhecimento e vontade de fazer parte da 1V99.</p>
+    </header>
+    <div class="form-card">
+      <ol class="stepper" id="stepper" aria-label="Progresso da candidatura">
+        <li><b>01</b><span>Informações pessoais</span></li>
+        <li><b>02</b><span>Conhecimento de roleplay</span></li>
+        <li><b>03</b><span>Comportamento e interesse na 1V99</span></li>
+      </ol>
+      <div class="progress" id="progress" data-step="1" aria-hidden="true"><i></i></div>
+      <p class="quote">Cada resposta representa uma oportunidade de demonstrar seu potencial.</p>
+      <p class="draft-status" id="draft-status" role="status" aria-live="polite"></p>
+      <div id="banner" class="banner" hidden></div>
+      <form id="form" novalidate autocomplete="off">
+        <div id="steps"></div>
+        <div class="hp" aria-hidden="true"><label>Não preencha este campo<input type="text" name="website" id="website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="actions">
+          <button type="button" class="btn btn-ghost" id="btn-back">VOLTAR</button>
+          <button type="button" class="btn btn-primary" id="btn-next">CONTINUAR<svg class="ico ico-go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button type="submit" class="btn btn-primary" id="btn-submit" hidden>ENVIAR CANDIDATURA<svg class="ico ico-go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <section id="success" class="success" hidden aria-labelledby="ok-title">
+    <div class="check" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28"/><path d="M19 33l9 9 17-19"/></svg></div>
+    <h2 id="ok-title" tabindex="-1">CANDIDATURA RECEBIDA</h2>
+    <p>Sua candidatura foi enviada para análise da administração da 1V99. Agora, aguarde o retorno da organização.</p>
+    <p class="protocol-label">Identificador da candidatura</p>
+    <p class="protocol" id="protocol"></p>
+    <p class="mt"><a class="btn btn-primary" href="index.html">VOLTAR À PÁGINA INICIAL</a></p>
+  </section>
+</main>
+<div id="overlay" class="overlay" role="status" hidden>
+  <div><div class="spinner" aria-hidden="true"></div><p>Enviando candidatura…</p></div>
+</div>
+<dialog id="confirm-send" class="confirm" aria-labelledby="cs-title">
+  <form method="dialog">
+    <h2 id="cs-title">Confirmar envio da candidatura?</h2>
+    <p class="muted">Revise suas respostas antes de enviar. Depois do envio, a candidatura segue para análise da Administração 1V99 e não poderá ser editada.</p>
+    <div class="btn-row">
+      <button class="btn btn-ghost btn-sm" value="cancel" type="submit">REVISAR</button>
+      <button class="btn btn-primary btn-sm" id="send-ok" value="ok" type="submit">CONFIRMAR ENVIO</button>
+    </div>
+  </form>
+</dialog>
+<footer class="site-footer">
+  <hr class="rule">
+  <a class="brand brand--foot" href="index.html" aria-label="1V99, página inicial"><img class="brand__logo" src="assets/img/logo-1v99.webp" alt="" width="760" height="606" decoding="async"><span class="sr-only">1V99</span></a>
+  <p class="foot__name">AMÉRICA ROLEPLAY</p>
+  <p class="motto">DISCIPLINA. LEALDADE. COMPROMETIMENTO.</p>
+</footer>
+<script type="module" src="assets/js/site.js"></script>
+<script type="module" src="assets/js/form.js"></script>
+</body>
+</html>
