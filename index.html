@@ -3,76 +3,96 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Recrutamento 1V99 | América RolePlay</title>
-<meta name="description" content="Candidate-se à facção 1V99 no América RolePlay (Roblox). Responda 15 perguntas em 3 etapas; a Administração 1V99 analisa todas as candidaturas.">
-<link rel="preload" as="image" href="assets/img/logo-1v99.webp">
-<link rel="preload" as="image" href="assets/img/hero-recrutamento.webp" media="(min-width:701px)">
+<title>Painel Administrativo 1V99 | América RolePlay</title>
+<meta name="description" content="Acesso restrito à Administração 1V99.">
+<meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#080808">
-<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=Sacramento&display=swap">
-<link rel="stylesheet" href="assets/css/styles.css">
-<script src="assets/js/boot.js" data-intro="1"></script>
+<link rel="stylesheet" href="../assets/css/styles.css">
+<script src="../assets/js/boot.js"></script>
 </head>
 <body>
-<a class="skip" href="#conteudo">Ir para o conteúdo</a>
-<div class="intro" id="intro" role="dialog" aria-modal="true" aria-label="Carregando 1V99">
-  <div class="intro__glow"></div>
-  <div class="intro__particles" aria-hidden="true"></div>
-  <div class="intro__stage"><div class="intro__zoom"><img class="intro__logo" src="assets/img/logo-1v99.webp" alt="1V99" width="760" height="606" decoding="async" fetchpriority="high"></div></div>
-  <div class="intro__loader" role="status"><span>Carregando</span><i class="intro__bar" aria-hidden="true"><b></b></i></div>
-  <button class="intro__skip" id="intro-skip" type="button">Pular</button>
-</div>
-<div class="ambient" id="ambient" aria-hidden="true"></div>
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="index.html" aria-label="1V99, América RolePlay, página inicial"><img class="brand__logo" src="assets/img/logo-1v99.webp" alt="" width="760" height="606" decoding="async"><span class="brand__sig" aria-hidden="true">América RolePlay</span></a>
-    <a class="btn btn-ghost btn-sm" href="admin/index.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>ÁREA ADMINISTRATIVA</a>
+<a class="skip" href="#main">Ir para o conteúdo</a>
+
+<p id="boot" class="gate muted" role="status"><span class="spinner spinner--sm" aria-hidden="true"></span>Carregando…</p>
+
+<section id="config-missing" class="gate" hidden aria-labelledby="cm-title">
+  <div class="gate__logo"><img class="brand__logo" src="../assets/img/logo-1v99.webp" alt="" width="760" height="606" decoding="async"><span class="brand__sig" aria-hidden="true">América RolePlay</span></div>
+  <h1 id="cm-title">Backend não configurado</h1>
+  <p>O Supabase ainda não foi configurado neste site, então não há login nem dados reais. Siga o README para gerar o arquivo <code>assets/js/config.js</code>.</p>
+  <p class="muted mt">Se quiser apenas visualizar a interface, abra a prévia abaixo. Ela usa <strong>dados fictícios</strong>, identificados como tal, e não salva nada.</p>
+  <p class="mt"><button class="btn btn-ghost" id="demo-btn" type="button">VER PRÉVIA COM DADOS DE DEMONSTRAÇÃO</button></p>
+</section>
+
+<section id="login-view" class="gate" hidden aria-labelledby="lg-title">
+  <div class="gate__logo"><img class="brand__logo" src="../assets/img/logo-1v99.webp" alt="" width="760" height="606" decoding="async"><span class="brand__sig" aria-hidden="true">América RolePlay</span></div>
+  <div class="card login-card">
+    <h1 id="lg-title">Painel Administrativo 1V99</h1>
+    <p class="muted">Acesso restrito à Administração 1V99. Digite a senha de administrador: são permitidas 3 tentativas.</p>
+    <div id="login-error" class="banner is-error mt" role="alert" hidden></div>
+    <form id="login-form" novalidate class="mt">
+      <div class="field"><label for="login-password">Senha de administrador</label><input id="login-password" type="password" autocomplete="current-password" required></div>
+      <button class="btn btn-primary" id="login-submit" type="submit">ENTRAR</button>
+    </form>
   </div>
-</header>
-<main id="conteudo">
-  <section class="hero hero--art" aria-labelledby="titulo">
-    <div class="hero__art">
-      <picture><source media="(max-width:700px)" srcset="assets/img/hero-recrutamento-800.webp"><img src="assets/img/hero-recrutamento.webp" alt="Recrutamento 1V99. Faça parte da 1V99." width="1672" height="941" decoding="async" fetchpriority="high"></picture>
-      <div class="hero__cta"><div data-rise><a class="btn btn-primary btn-lg" href="candidatura.html">INICIAR CANDIDATURA<svg class="ico ico-go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+  <p class="mt"><a href="../index.html">Voltar ao site</a></p>
+</section>
+
+<div id="app" class="shell" hidden>
+  <aside class="sidebar">
+    <a class="brand" href="index.html" aria-label="Painel Administrativo 1V99"><img class="brand__logo" src="../assets/img/logo-1v99.webp" alt="" width="760" height="606" decoding="async"></a>
+    <p class="side-title">PAINEL ADMINISTRATIVO 1V99</p>
+    <nav aria-label="Principal"><a href="index.html" aria-current="page"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg>Candidaturas</a></nav>
+    <p class="who" id="user-email"></p>
+    <button class="btn btn-ghost btn-sm" id="logout-btn" type="button">SAIR</button>
+  </aside>
+
+  <main id="main" class="panel">
+    <p class="welcome">SEJA BEM-VINDO À CENTRAL ADMINISTRATIVA 1V99</p>
+    <div id="demo-banner" class="demo-banner" role="note" hidden>Modo demonstração: todos os dados são fictícios e nada é salvo no Supabase.</div>
+    <h1>Candidaturas</h1>
+
+    <div class="stats" id="stats" role="group" aria-label="Resumo por status"><button class="stat" type="button" data-status="pendente" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><strong>0</strong>Pendentes</button><button class="stat" type="button" data-status="em_analise" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><strong>0</strong>Em análise</button><button class="stat" type="button" data-status="aprovada" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg><strong>0</strong>Aprovadas</button><button class="stat" type="button" data-status="recusada" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg><strong>0</strong>Recusadas</button></div>
+
+    <form class="toolbar" id="toolbar" role="search" novalidate>
+      <div class="grow"><label for="search">Buscar por nome Roblox ou nome na cidade</label><input class="input" id="search" type="search" maxlength="40" autocomplete="off"></div>
+      <div><label for="filter-status">Status</label>
+        <select class="input" id="filter-status">
+          <option value="">Todos</option><option value="pendente">Pendente</option><option value="em_analise">Em análise</option><option value="aprovada">Aprovada</option><option value="recusada">Recusada</option>
+        </select></div>
+      <div><label for="order">Ordenar por data</label>
+        <select class="input" id="order"><option value="desc">Mais recentes</option><option value="asc">Mais antigas</option></select></div>
+      <button class="btn btn-ghost btn-sm" id="refresh" type="button">ATUALIZAR</button>
+    </form>
+
+    <div id="list-state" class="state" role="status" hidden></div>
+    <div class="table-wrap" id="table-wrap" hidden>
+      <table>
+        <thead><tr><th scope="col">Candidato</th><th scope="col">Enviada em</th><th scope="col">Status</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
     </div>
-    <div class="hero__inner wrap">
-      <h1 class="title sr-only" id="titulo"><span class="t1">RECRUTAMENTO</span> <span class="t2">1V99</span></h1>
-      <p class="hero__lead" data-rise>Faça sua candidatura e tenha a oportunidade de fazer parte da 1V99 no América RolePlay.</p>
-      <p class="hero__note" data-rise>São 15 perguntas em 3 etapas. Você pode parar e continuar depois neste mesmo aparelho.</p>
+    <p class="muted mt" id="limit-note" hidden>Mostrando as 200 candidaturas mais recentes para o filtro atual. Use a busca para refinar.</p>
+  </main>
+</div>
+
+<dialog id="detail" class="detail" aria-labelledby="d-title"><div class="detail__in" id="detail-body"></div></dialog>
+
+<dialog id="confirm" class="confirm" aria-labelledby="c-title">
+  <form method="dialog">
+    <h2 id="c-title"></h2>
+    <p id="c-text" class="muted"></p>
+    <div class="btn-row">
+      <button class="btn btn-ghost btn-sm" value="cancel" type="submit">CANCELAR</button>
+      <button class="btn btn-primary btn-sm" id="c-ok" value="ok" type="submit">CONFIRMAR</button>
     </div>
-  </section>
-  <hr class="rule">
-  <section class="section" aria-labelledby="requisitos">
-    <div class="wrap reveal">
-      <div class="section__head"><h2 id="requisitos">Requisitos básicos</h2><p>Antes de se candidatar, confira se você atende ao que a 1V99 espera de seus integrantes.</p></div>
-      <div class="cards"><article class="card card--req"><span class="card__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/></svg></span><p>Ter uma conta no Roblox e jogar América RolePlay.</p></article><article class="card card--req"><span class="card__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h10"/></svg></span><p>Conhecer as regras da cidade, como MG, PG, RDM, VDM e amor à vida.</p></article><article class="card card--req"><span class="card__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span><p>Ter disponibilidade para ficar ativo no jogo com regularidade.</p></article><article class="card card--req"><span class="card__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><p>Respeitar a hierarquia da 1V99 e os demais jogadores.</p></article><article class="card card--req"><span class="card__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 5h14v10H10l-5 4z"/></svg></span><p>Responder todas as perguntas com sinceridade e com suas próprias palavras.</p></article></div>
-    </div>
-  </section>
-  <hr class="rule">
-  <section class="section" aria-labelledby="processo">
-    <div class="wrap reveal">
-      <div class="section__head"><h2 id="processo">Como funciona o processo seletivo</h2><p>O caminho da candidatura até a decisão da Administração 1V99.</p></div>
-      <ol class="steps"><li class="card step"><b>01</b><strong>Preencha o formulário</strong><span>Responda às 15 perguntas, divididas em informações pessoais, conhecimento de roleplay e comportamento.</span></li><li class="card step"><b>02</b><strong>Receba seu protocolo</strong><span>Ao enviar, você recebe um código único que identifica a sua candidatura.</span></li><li class="card step"><b>03</b><strong>Análise da Administração 1V99</strong><span>A Administração 1V99 lê suas respostas e avalia o seu perfil.</span></li><li class="card step"><b>04</b><strong>Decisão</strong><span>A Administração 1V99 define se a candidatura é aprovada ou recusada.</span></li></ol>
-    </div>
-  </section>
-  <hr class="rule">
-  <section class="section">
-    <div class="wrap reveal">
-      <div class="card notice">
-        <p><strong>Todas as candidaturas serão analisadas pela Administração 1V99.</strong> Enviar o formulário não garante a aprovação.</p>
-        <a class="btn btn-primary btn-lg" href="candidatura.html">INICIAR CANDIDATURA<svg class="ico ico-go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-    </div>
-  </section>
-</main>
-<footer class="site-footer">
-  <hr class="rule">
-  <a class="brand brand--foot" href="index.html" aria-label="1V99, página inicial"><img class="brand__logo" src="assets/img/logo-1v99.webp" alt="" width="760" height="606" decoding="async"><span class="sr-only">1V99</span></a>
-  <p class="foot__name">AMÉRICA ROLEPLAY</p>
-  <p class="motto">DISCIPLINA. LEALDADE. COMPROMETIMENTO.</p>
-</footer>
-<script type="module" src="assets/js/site.js"></script>
+  </form>
+</dialog>
+
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+<script type="module" src="../assets/js/admin.js"></script>
 </body>
 </html>
